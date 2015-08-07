@@ -1,1 +1,45 @@
 <%- partial('_partial/article', {post: page, index: false}) %>
+
+---
+layout: default
+---
+
+<div>
+<article role="article">
+  <% if (page.title){ %>
+  <header>
+    <h1 class="entry-title"><%= post.title %></h1>
+    <% if (page.date){ %><p class="meta"><%- partial('post/date', {class_name: 'article-date', date_format: null}) %></p><% } %>
+
+  </header>
+  <% } %>
+  <%- post.content %>
+  <% if (page.footer != false){ %>
+    <footer>
+      <% if (page.date || page.author){ %><p class="meta">
+        <% if (page.author){ %><% include post/author.html %><% } %>
+        <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+        <% if (page.categories){ %><%- partial('post/category') %><% } %>
+      </p><% } %>
+      <% if (page.sharing != false){ %>
+        <%- partial('post/sharing') %>
+      <% } %>
+    </footer>
+  <% } %>
+</article>
+<% if (site.disqus_short_name && page.comments == true){ %>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><% include post/disqus_thread.html %></div>
+  </section>
+<% } %>
+</div>
+<% unless page.sidebar == false %>
+<aside class="sidebar">
+  <% if site.page_asides.size %>
+    <% include_array page_asides %>
+  <% else %>
+    <% include_array default_asides %>
+  <% endif %>
+</aside>
+<% endunless %>

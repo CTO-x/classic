@@ -1,18 +1,15 @@
+<html>
 <%- partial('_partial/head') %>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-      <div class="outer">
-        <section id="main"><%- body %></section>
-        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
-          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        <% } %>
-      </div>
-      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+<body> <!-- TODO body 添加样式-->
+  <header role="banner"><%- partial('_partial/header', null, {cache: !config.relative_link}) %></header>
+  <nav role="navigation"><%- partial('_partial/navigation', null, {cache: !config.relative_link}) %></nav>
+  <div id="main">
+    <div id="content">
+      <%- body %>
     </div>
-    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-    <%- partial('_partial/after-footer') %>
   </div>
+  <footer role="contentinfo"><%- partial('_partial/footer', null, {cache: !config.relative_link}) %></footer>
+  <%- partial('_partial/after-footer') %>
+
 </body>
 </html>
