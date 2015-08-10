@@ -12,18 +12,18 @@
     <% } %>
     <p class="meta">
       <% if (page.prev){ %>
-        <a class="basic-alignment left" href="<%= page.prev.url %>" title="Previous Post: <%= page.prev.title %>">&laquo; <%= page.previous.title %></a>
+        <a class="basic-alignment left" href="<%- config.root %><%- page.prev.path %>" title="Previous Post: <%= page.prev.title %>">&laquo; <% if (page.prev.title){ %><%= page.prev.title %><% } else { %>(no title)<% } %></a>
       <% } %>
       <% if (page.next){ %>
-        <a class="basic-alignment right" href="<%= page.next.url %>" title="Next Post: <%= page.next.title %>"><%= page.next.title %> &raquo;</a>
+        <a class="basic-alignment right" href="<%- config.root %><%- page.next.path %>" title="Next Post: <%= page.next.title %>"><% if (page.next.title){ %><%= page.next.title %><% } else { %>(no title)<% } %> &raquo;</a>
       <% } %>
     </p>
   </footer>
 </article>
-<% if (config.disqus_short_name && page.comments == true){ %>
+<% if (config.disqus_shortname && page.comments == true){ %>
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><%- partial('post/disqus_thread') %></div>
+    <div id="disqus_thread" aria-live="polite"><%- partial('_partial/post/disqus_thread') %></div>
   </section>
 <% } %>
 </div>
