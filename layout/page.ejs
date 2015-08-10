@@ -1,9 +1,3 @@
-<%- partial('_partial/article', {post: page, index: false}) %>
-
----
-layout: default
----
-
 <div>
 <article role="article">
   <% if (page.title){ %>
@@ -17,7 +11,7 @@ layout: default
   <% if (page.footer != false){ %>
     <footer>
       <% if (page.date || page.author){ %><p class="meta">
-        <% if (page.author){ %><% include post/author.html %><% } %>
+        <% if (page.author){ %><%- partial('_partial/post/author') %><% } %>
         <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
         <% if (page.categories){ %><%- partial('post/category') %><% } %>
       </p><% } %>
@@ -27,19 +21,18 @@ layout: default
     </footer>
   <% } %>
 </article>
-<% if (site.disqus_short_name && page.comments == true){ %>
+<% if (config.disqus_short_name && page.comments == true){ %>
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><% include post/disqus_thread.html %></div>
+    <div id="disqus_thread" aria-live="polite"><%- partial('post/disqus_thread') %></div>
   </section>
 <% } %>
 </div>
-<% unless page.sidebar == false %>
-<aside class="sidebar">
-  <% if site.page_asides.size %>
-    <% include_array page_asides %>
-  <% else %>
-    <% include_array default_asides %>
-  <% endif %>
-</aside>
-<% endunless %>
+
+<% if (theme.sidebar){ %>
+  <aside class="sidebar">
+    <% theme.widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+    <% }) %>
+  </aside>
+<% } %>

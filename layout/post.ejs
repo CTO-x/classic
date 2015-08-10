@@ -1,1 +1,37 @@
-<%- partial('_partial/article', {post: page, index: false}) %>
+<div>
+<article class="hentry" role="article">
+  <%- partial('_partial/article', {index: false}) %>
+  <footer>
+    <p class="meta">
+      <%- partial('_partial/post/author') %>
+      <%- partial('_partial/post/date') %>
+      <%- partial('_partial/post/category') %>
+    </p>
+    <% if (page.sharing != false){ %>
+      <%- partial('_partial/post/sharing') %>
+    <% } %>
+    <p class="meta">
+      <% if (page.prev){ %>
+        <a class="basic-alignment left" href="<%= page.prev.url %>" title="Previous Post: <%= page.prev.title %>">&laquo; <%= page.previous.title %></a>
+      <% } %>
+      <% if (page.next){ %>
+        <a class="basic-alignment right" href="<%= page.next.url %>" title="Next Post: <%= page.next.title %>"><%= page.next.title %> &raquo;</a>
+      <% } %>
+    </p>
+  </footer>
+</article>
+<% if (config.disqus_short_name && page.comments == true){ %>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><%- partial('post/disqus_thread') %></div>
+  </section>
+<% } %>
+</div>
+
+<% if (theme.sidebar){ %>
+  <aside class="sidebar">
+    <% theme.widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+    <% }) %>
+  </aside>
+<% } %>

@@ -1,1 +1,24 @@
-<%- partial('_partial/archive', {pagination: 2, index: true}) %>
+<div class="blog-index">
+  <% page.posts.each(function(post){ %>
+    <article>
+        <%- partial('_partial/article', {post: post, index: true}) %>
+    </article>
+  <% }) %>
+  <div class="pagination">
+    <% if (page.next_link){ %>
+      <a class="prev" href="<%= page.next_link %>">&larr; Older</a>
+    <% } %>
+    <a href="/blog/archives">Blog Archives</a>
+    <% if (page.prev_link){ %>
+    <a class="next" href="<%= page.prev_link %>">Newer &rarr;</a>
+    <% } %>
+  </div>
+</div>
+
+<% if (theme.sidebar){ %>
+  <aside class="sidebar">
+    <% theme.widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+    <% }) %>
+  </aside>
+<% } %>

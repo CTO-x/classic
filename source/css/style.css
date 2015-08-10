@@ -214,7 +214,7 @@ article{padding-top:1em}
 article header{position:relative;padding-top:2em;padding-bottom:1em;margin-bottom:1em;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x}
 article header h1{margin:0}
 article header h1 a{text-decoration:none}
-article header h1 a:hover{text-decoration:underline}
+/*article header h1 a:hover{text-decoration:underline}*/
 article header p{font-size:.9em;color:#aaa;margin:0}
 article header p.meta{text-transform:uppercase;position:absolute;top:0}
 @media only screen and (min-width: 768px){
@@ -266,7 +266,7 @@ html .gist .gist-file .gist-syntax .gist-highlight{background:#002b36 !important
 html .gist .gist-file .gist-syntax .highlight pre{padding:0}
 html .gist .gist-file .gist-meta{padding:.6em 0.8em;border:1px solid #083e4b !important;color:#586e75;font-size:.7em !important;background:#073642 url('/images/noise.png?1425807048') top left;line-height:1.5em}
 html .gist .gist-file .gist-meta a{color:#75878b !important;text-decoration:none}
-html .gist .gist-file .gist-meta a:hover{text-decoration:underline}
+/*html .gist .gist-file .gist-meta a:hover{text-decoration:underline}*/
 html .gist .gist-file .gist-meta a:hover{color:#93a1a1 !important}
 html .gist .gist-file .gist-meta a[href*='#file']{position:absolute;top:0;left:0;right:-10px;color:#474747 !important}
 html .gist .gist-file .gist-meta a[href*='#file']:hover{color:#1863a1 !important}
@@ -338,7 +338,7 @@ figure.code figcaption{position:relative}
 figure.code .highlight{margin-bottom:0}
 .code-title,html .gist .gist-file .gist-meta a[href*='#file'],h3.filename,figure.code figcaption{text-align:center;font-size:13px;line-height:2em;text-shadow:#cbcccc 0 1px 0;color:#474747;font-weight:normal;margin-bottom:0;-moz-border-radius-topleft:5px;-webkit-border-top-left-radius:5px;border-top-left-radius:5px;-moz-border-radius-topright:5px;-webkit-border-top-right-radius:5px;border-top-right-radius:5px;font-family:"Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;background:#aaa url('/images/code_bg.png?1425807047') top repeat-x;border:1px solid #565656;border-top-color:#cbcbcb;border-left-color:#a5a5a5;border-right-color:#a5a5a5;border-bottom:0}
 .download-source,html .gist .gist-file .gist-meta a[href*=raw],figure.code figcaption a{position:absolute;right:.8em;text-decoration:none;color:#666 !important;z-index:1;font-size:13px;text-shadow:#cbcccc 0 1px 0;padding-left:3em}
-.download-source:hover,html .gist .gist-file .gist-meta a[href*=raw]:hover,figure.code figcaption a:hover{text-decoration:underline}
+/*.download-source:hover,html .gist .gist-file .gist-meta a[href*=raw]:hover,figure.code figcaption a:hover{text-decoration:underline}*/
 #archive #content>div,#archive #content>div>article{padding-top:0}
 #blog-archives{color:#aaa}
 #blog-archives article{padding:1em 0 1em;position:relative;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x}
@@ -348,7 +348,7 @@ figure.code .highlight{margin-bottom:0}
 #blog-archives h2{display:none}
 #blog-archives h1{font-size:1.5em}
 #blog-archives h1 a{text-decoration:none;color:inherit;font-weight:normal;display:inline-block}
-#blog-archives h1 a:hover{text-decoration:underline}
+/*#blog-archives h1 a:hover{text-decoration:underline}*/
 #blog-archives h1 a:hover{color:#0181eb}
 #blog-archives a.category,#blog-archives time{color:#aaa}
 #blog-archives .entry-content{display:none}
@@ -398,7 +398,7 @@ aside.sidebar:hover a:hover{color:#0181eb}
 .googleplus-hidden{position:absolute;top:-1000em;left:-1000em}
 #pinboard_linkroll .pin-title,#pinboard_linkroll .pin-description{display:block;margin-bottom:.5em}
 #pinboard_linkroll .pin-tag{text-decoration:none}
-#pinboard_linkroll .pin-tag:hover{text-decoration:underline}
+/*#pinboard_linkroll .pin-tag:hover{text-decoration:underline}*/
 #pinboard_linkroll .pin-tag:after{content:','}
 #pinboard_linkroll .pin-tag:last-child:after{content:''}
 .delicious-posts a.delicious-link{margin-bottom:.5em;display:block}
