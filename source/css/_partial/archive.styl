@@ -1,80 +1,71 @@
-.archives-wrap
-  margin: block-margin 0
-
-.archives
-  clearfix()
-
-.archive-year-wrap
-  margin-bottom: 1em
-
-.archive-year
-  @extend $block-caption
-
-.archives
-  column-gap: 10px
-  @media mq-tablet
-    column-count: 2
-  @media mq-normal
-    column-count: 3
-
-.archive-article
-  avoid-column-break()
-
-.archive-article-inner
-  @extend $block
-  padding: 10px
-  margin-bottom: 15px
-
-.archive-article-title
-  text-decoration: none
-  font-weight: bold
-  color: color-default
-  transition: color 0.2s
-  line-height: line-height
-  &:hover
-    color: color-link
-
-.archive-article-footer
-  margin-top: 1em
-
-.archive-article-date
-  color: color-grey
-  text-decoration: none
-  font-size: 0.85em
-  line-height: 1em
-  margin-bottom: 0.5em
-  display: block
-
-#page-nav
-  clearfix()
-  margin: block-margin auto
-  background: #fff
-  box-shadow: 1px 2px 3px #ddd
-  border: 1px solid color-border
-  border-radius: 3px
-  text-align: center
-  color: color-grey
-  overflow: hidden
-  a, span
-    padding: 10px 20px
-    line-height: 1
-    height: 2ex
+#blog-archives
+  color #aaa
+  article
+    padding 1em 0 1em
+    position relative
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x
+    padding-left 4.5em
+    padding-bottom .7em
+    &:last-child
+      background none
+    footer
+      padding 0
+      margin 0
+  h1
+    color #222
+    margin-bottom .3em
+    font-size 1.5em
+    a
+      text-decoration none
+      color inherit
+      font-weight normal
+      display inline-block
+      &:hover
+        color #0181eb
+  h2
+    display none
+    margin-bottom .3em
+    font-weight normal
+    display inline-block
+    position relative
+    top -1px
+    float left
+    &:first-child
+      padding-top .75em
+  .entry-content
+    display none
+  time
+    font-size .9em
+    line-height 1.2em
+    position absolute
+    text-align right
+    left 0em
+    top 1.8em
+    .month
+      text-transform uppercase
+  p
+    margin-bottom 1em
   a
-    color: color-grey
-    text-decoration: none
     &:hover
-      background: color-grey
-      color: #fff
-  .prev
-    float: left
-  .next
-    float: right
-  .page-number
-    display: inline-block
-    @media mq-mobile
-      display: none
-  .current
-    color: color-default
-    font-weight: bold
-  .space
-    color: color-border
+      color #0181eb
+    &.category
+      line-height 1.1em
+  .year
+    display none
+/*#blog-archives h1 a:hover{text-decoration:underline}*/
+#blog-archives a.category,#blog-archives time
+  color #aaa
+#blog-archives time .month,#blog-archives time .day
+  display inline-block
+#blog-archives a,#blog-archives .entry-content a
+  color inherit
+#blog-archives a:hover,#blog-archives .entry-content a:hover
+  color #0181eb
+@media
+  only
+    screen
+      and
+        (min-width
+          &:
+            550px)
+              #blog-archives article{margin-left 5em

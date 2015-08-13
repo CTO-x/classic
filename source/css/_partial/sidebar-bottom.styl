@@ -1,15 +1,42 @@
-.widget-wrap
-  margin-bottom: block-margin !important
-  @media mq-normal
-    column(sidebar-column)
-
-.widget-title
-  color: #ccc
-  text-transform: uppercase
-  letter-spacing: 2px
-  margin-bottom: 1em
-  line-height: 1em
-  font-weight: bold
-
-.widget
-  color: color-grey
+.toggle-sidebar,.no-sidebar .toggle-sidebar
+  display none
+@media
+  only
+    screen
+      and
+        (min-width
+          &:
+            750px)
+              body.sidebar-footer aside.sidebar{float none
+              width auto
+              clear left
+              margin 0
+              padding 0 35px 1px
+              background-color #f7f7f7
+              border-top 1px solid #eaeaea
+body.sidebar-footer aside.sidebar section.odd,body.sidebar-footer aside.sidebar section.even
+  float left
+  width 48%
+body
+  &.sidebar-footer
+    aside
+      &.sidebar
+        section
+          &.odd
+            margin-left 0
+          &.even
+            margin-left 4%
+        &.thirds
+          section
+            width 30%
+            margin-left 5%
+            &.first
+              margin-left 0
+              clear both
+    .toggle-sidebar
+      display none
+}
+  body
+    &.sidebar-footer
+      #content
+        margin-right 0px
