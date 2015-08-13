@@ -7,9 +7,13 @@
     <% } %>
     <% if (page.meta != false){ %>
       <p class="meta">
-        <%- partial('post/date', {date_format: config.date_format}) %>
+        <% if (index){ %>
+          <%- partial('post/date', {page:post, date_format: config.date_format}) %>
+        <% }else{ %>
+          <%- partial('post/date', {date_format: config.date_format}) %>
+        <% } %>
         <% if (config.disqus_shortname && page.comments != false ){ %>
-           | <a href="<% if (index){ %><%- url_for(post.path) %><% } %>#disqus_thread">Comments</a>
+           | <a href="<% if (index){ %><%- url_for(post.path) %><% } %>#disqus_thread" <% if (index){ %>data-disqus-identifier="<%- url_for(post.permalink) %>"<% } %>>Comments</a>
         <% } %>
       </p>
     <% } %>
@@ -17,7 +21,7 @@
 <% } %>
 <% if (index){ %>
   <div class="entry-content"><%- post.excerpt || post.content %></div>
-  <% if (theme.excerpt_link){ %>
+  <% if (theme.excerpt_link && post.excerpt){ %>
     <footer>
       <a rel="full-article" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
     </footer>

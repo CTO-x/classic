@@ -1,7 +1,7 @@
-<h1><a href="<%- url_for(post.link) %>"><%= post.title %></a></h1>
-<time datetime="<%= date_xml(post.date) %>" pubdate><%= date(post.date, "<span class='month'>MMM</span> <span class='day'>D</span> <span class='year'>Y</span>") %></time>
-<% if (page.categories.size != 0) {%>
+<h1><a href="<%- url_for(post.path) %>"><%= post.title %></a></h1>
+<time datetime="<%= date_xml(post.date) %>" pubdate><span class='month'><%= date(post.date, 'MMM') %></span> <span class='day'><%= date(post.date, 'D') %></span><span class='year'>, <%= date(post.date, 'YYYY') %></span></time>
+<% if (post.categories && post.categories.length != 0){ %>
 <footer>
-  <span class="categories">posted in {{ post.categories | category_links }}</span>
+  <span class="categories">posted in <%- list_categories(post.categories, {show_count:false, style: ''}) %></span>
 </footer>
 <% } %>

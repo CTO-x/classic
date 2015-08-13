@@ -1,33 +1,30 @@
-<% if (pagination == 2){ %>
-  <% page.posts.each(function(post){ %>
-    <%- partial('article', {post: post, index: true}) %>
-  <% }) %>
-  <% if (page.total > 1){ %>
-    <nav id="page-nav">
-      <%- paginator({
-        prev_text: '&laquo; Prev',
-        next_text: 'Next &raquo;'
-      }) %>
-    </nav>
+<div>
+<article role="article">
+  <% if (page.title){ %>
+  <header>
+    <h1 class="entry-title"><%= page.title %></h1>
+  </header>
   <% } %>
-<% } else { %>
-  <% var last; %>
+  <div id="blog-archives" class="category">
   <% page.posts.each(function(post, i){ %>
-    <% var year = post.date.year(); %>
-    <% if (last != year){ %>
-      <% if (last != null){ %>
-        </div></section>
-      <% } %>
-      <% last = year; %>
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
-        </div>
-        <div class="archives">
-    <% } %>
-    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
-  <% }) %>
-  <% if (page.posts.length){ %>
-    </div></section>
+  <% var year = post.date.year(); now = date(Date.now(), 'YYYY'); %>
+  <% if (year != now){ %>
+    <% var year = now; %>
+    <h2><%= year %></h2>
   <% } %>
+  <article>
+    <%- partial('_partial/archive-post', {post: post}) %>
+  </article>
+  <% }) %>
+  </div>
+
+</article>
+</div>
+
+<% if (theme.sidebar){ %>
+  <aside class="sidebar">
+    <% theme.widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+    <% }) %>
+  </aside>
 <% } %>

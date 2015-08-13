@@ -1,26 +1,32 @@
-# Header
+##### Menu
 menu:
-  Home: /
-  Archives: /archives
+  首页: /
+  博文列表: /archives/
+  # 简历: /cv/
+  关于: /about/
+  # RSS: /atom.xml
 rss: /atom.xml
 
 # Content
-excerpt_link: Read More
+excerpt_link: Read More →
 fancybox: true
 
 # Sidebar
 sidebar: right
 widgets:
 - category
-- tag
-- tagcloud
-- archive
+#- tag
+#- tagcloud
+#- archive
 - recent_posts
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-60526602-1
 favicon: /favicon.png
 twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+
+simple_search: https://www.google.com
