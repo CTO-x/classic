@@ -114,7 +114,7 @@ $('document').ready(function() {
   testFeatures();
   wrapFlashVideos();
   flashVideoFallback();
-  addCodeLineNumbers();
+  // addCodeLineNumbers();
   getNav();
   addSidebarToggler();
 });

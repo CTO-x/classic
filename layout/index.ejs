@@ -8,7 +8,7 @@
     <% if (page.next_link){ %>
       <a class="prev" href="<%= config.root %><%= page.next_link %>">&larr; <%= __('older') %></a>
     <% } %>
-    <a href="/blog/archives"><%= __('blog_archives') %></a>
+    <a href="/archives"><%= __('blog_archives') %></a>
     <% if (page.current != 1){ %>
     <a class="next" href="<%= config.root %><%= page.prev_link %>"><%= __('newer') %> &rarr;</a>
     <% } %>
