@@ -1,6 +1,6 @@
 <% if (site.posts.length){ %>
 <section>
-  <h1>Recent Posts</h1>
+  <h1><%= __('recent_posts') %></h1>
   <ul id="recent_posts">
     <% site.posts.sort('date', -1).limit(config.recent_posts).each(function(post){ %>
       <li class="post">

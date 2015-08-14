@@ -6,10 +6,12 @@
   <% }) %>
   <div class="pagination">
     <% if (page.next_link){ %>
-      <a class="prev" href="<%= config.root %><%= page.next_link %>">&larr; Older</a>
+      <a class="prev" href="<%= config.root %><%= page.next_link %>">&larr; <%= __('older') %></a>
     <% } %>
-    <a href="/blog/archives">Blog Archives</a>
-    <a class="next" href="<%= config.root %><%= page.prev_link %>">Newer &rarr;</a>
+    <a href="/blog/archives"><%= __('blog_archives') %></a>
+    <% if (page.current != 1){ %>
+    <a class="next" href="<%= config.root %><%= page.prev_link %>"><%= __('newer') %> &rarr;</a>
+    <% } %>
   </div>
 </div>
 

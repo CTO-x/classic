@@ -1,6 +1,6 @@
 <% if (site.categories.length){ %>
 <section>
-  <h1>Categories</h1>
+  <h1><%= __('categories') %></h1>
   <ul id="categories">
     <% site.categories.sort('name').each(function(category){ %>
       <% if(category.posts.length){ %>
