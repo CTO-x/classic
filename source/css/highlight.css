@@ -20,9 +20,12 @@
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .entry-content code {
-  background: #eee;
+  background: #f8f8f8;
   text-shadow: 0 1px #fff;
+  line-height: normal;
   padding: 0 0.3em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
 .entry-content pre code {
   background: none;
