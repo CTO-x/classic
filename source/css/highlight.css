@@ -11,7 +11,7 @@
   line-height: 22.400000000000002px;
 }
 .entry-content .highlight .gutter pre,
-.entry-content .gist .gist-file .gist-data .line-numbers {
+.entry-content .gist .gist-file .gist-data .line {
   color: #666;
   font-size: 0.85em;
 }
@@ -65,8 +65,9 @@
 }
 .entry-content .highlight .gutter pre {
   text-align: right;
-  padding-right: 15px;
-  border-right: 2px solid #6CE26C !important;
+  padding-right: 10px;
+  margin-right: 6px;
+  border-right: 2px solid #949694  !important;
 }
 .entry-content .gist {
   margin: 0 -20px;
@@ -85,7 +86,7 @@
   background: none;
   border: none;
 }
-.entry-content .gist .gist-file .gist-data .line-numbers {
+.entry-content .gist .gist-file .gist-data .line {
   background: none;
   border: none;
   padding: 0 20px 0 0;
