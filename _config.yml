@@ -2,9 +2,7 @@
 menu:
   首页: /
   博文列表: /archives/
-  # 简历: /cv/
   关于: /about/
-  # RSS: /atom.xml
 rss: /atom.xml
 
 # Content
@@ -23,7 +21,7 @@ widgets:
 
 # Miscellaneous
 google_analytics: UA-60526602-1
-favicon: /favicon.png
+favicon: /favicon.ico
 twitter:
 google_plus:
 fb_admins:
