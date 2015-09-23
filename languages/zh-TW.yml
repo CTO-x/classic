@@ -11,6 +11,7 @@ archive_b: 歸檔：%s
 archive_date: "YYYY 年 MM 月"
 page: 第 %d 頁
 recent_posts: 近期文章
+recent_comments: 近期評論
 menu: 菜單
 links: 友情鏈接
 weibo: 新浪微博
@@ -20,3 +21,7 @@ hidesidebar: 隱藏側邊欄
 updated: 更新日期
 totop: 返回頂部
 datepublished: 發表於
+comments: 評論
+older: 舊作
+newer: 新章
+blog_archives: 博文列表
