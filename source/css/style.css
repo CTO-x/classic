@@ -179,7 +179,7 @@ body>nav ul{display:none}
     body>nav ul li{margin:0}
     body>nav a{color:#6b6b6b;font-family:"PT Sans","Helvetica Neue",Arial,sans-serif;text-shadow:#ebebeb 0 1px;float:left;text-decoration:none;font-size:1.1em;padding:.1em 0;line-height:1.5em}
     body>nav a:visited{color:#6b6b6b}
-    body>nav a:hover{color:#2b2b2b}
+    body>nav a:hover{color:#101010}
     body>nav li+li{border-left:1px solid #b0b0b0;margin-left:.8em}
     body>nav li+li a{padding-left:.8em;border-left:1px solid #dedede}
     body>nav form{float:right;text-align:left;padding-left:.8em;width:175px}
@@ -200,7 +200,7 @@ body>nav ul{display:none}
 @media only screen and (min-width: 992px){
     .maskImage body>nav ul[data-subscription$=email]+form{width:173px}
 }
-.maskImage ul.subscription{position:relative;top:.2em}
+.maskImage ul.subscription{position:relative}
 .maskImage ul.subscription li,.maskImage ul.subscription a{border:0;padding:0}
 .maskImage a[rel=subscribe-rss]{position:relative;top:0px;text-indent:-999999em;background-color:#dedede;border:0;padding:0}
 .maskImage a[rel=subscribe-rss],.maskImage a[rel=subscribe-rss]:after{-webkit-mask-image:url('/images/rss.png?1425807049');-moz-mask-image:url('/images/rss.png?1425807049');-ms-mask-image:url('/images/rss.png?1425807049');-o-mask-image:url('/images/rss.png?1425807049');mask-image:url('/images/rss.png?1425807049');-webkit-mask-repeat:no-repeat;-moz-mask-repeat:no-repeat;-ms-mask-repeat:no-repeat;-o-mask-repeat:no-repeat;mask-repeat:no-repeat;width:22px;height:22px}

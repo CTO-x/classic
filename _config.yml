@@ -21,6 +21,7 @@ widgets:
 
 # Miscellaneous
 google_analytics: UA-60526602-1
+baidu_analytics: f09124d228ae25c45c871424139d9ca9
 favicon: /favicon.ico
 twitter:
 google_plus:
