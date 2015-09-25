@@ -1,165 +1,206 @@
-#header
-  height: banner-height
-  position: relative
-  border-bottom: 1px solid color-border
-  &:before, &:after
-    content: ""
-    position: absolute
-    left: 0
-    right: 0
-    height: 40px
-  &:before
-    top: 0
-    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
-  &:after
-    bottom: 0
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
+body
+  line-height 1.5em
+  color #222
+  & > div
+    background #f2f2f2 url('/images/noise.png?1425807048') top left
+    border-bottom 1px solid #bfbfbf
+    & > div
+      background #f8f8f8 url('/images/noise.png?1425807048') top left
+      border-right 1px solid #e0e0e0
+  & > header
+    h1
+      font-size 2.2em
+      font-family "PT Serif","Georgia","Helvetica Neue",Arial,sans-serif
+      font-weight normal
+      line-height 1.2em
+      margin-bottom 0.6667em
+    h2
+      font-family "PT Serif","Georgia","Helvetica Neue",Arial,sans-serif
+.heading,body>header h1,h1,h2,h3,h4,h5,h6
+  font-family "PT Serif","Georgia","Helvetica Neue",Arial,sans-serif
+.sans,body>header h2,article header p.meta,article>footer,#content .blog-index footer,html .gist .gist-file .gist-meta,#blog-archives a.category,#blog-archives time,aside.sidebar section,body>footer
+  font-family "PT Sans","Helvetica Neue",Arial,sans-serif
+.serif,body,#content .blog-index a[rel=full-article]
+  font-family "PT Serif",Georgia,Times,"Times New Roman",serif
+.mono,pre,code,tt,p code,li code
+  font-family Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace
+h1
+  font-size 2.2em
+  line-height 1.2em
+  font-size 2.6em
+  line-height 1.2em
+@media only screen and (min-width: 992px)
+  body
+    font-size 1.15em
+  h1
+    font-size 2.6em
+    line-height 1.2em
+body
+  & > header
+    font-size 1em
+    padding-top 1.5em
+    padding-bottom 1.5em
 
-#header-outer
-  height: 100%
-  position: relative
 
-#header-inner
-  position: relative
-  overflow: hidden
-
-#banner
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  background: url(banner-url) center #000
-  background-size: cover
-  z-index: -1
-
-#header-title
-  text-align: center
-  height: logo-size
-  position: absolute
-  top: 50%
-  left: 0
-  margin-top: logo-size * -0.5
-
-$logo-text
-  text-decoration: none
-  color: #fff
-  font-weight: 300
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
-
-#logo
-  @extend $logo-text
-  font-size: logo-size
-  line-height: logo-size
-  letter-spacing: 2px
-
-#subtitle
-  @extend $logo-text
-  font-size: subtitle-size
-  line-height: subtitle-size
-  letter-spacing: 1px
-
-#subtitle-wrap
-  margin-top: subtitle-size
-
-#main-nav
-  float: left
-  margin-left: -15px
-
-$nav-link
-  float: left
-  color: #fff
-  opacity: 0.6
-  text-decoration: none
-  text-shadow: 0 1px rgba(0, 0, 0, 0.2)
-  transition: opacity 0.2s
-  display: block
-  padding: 20px 15px
-  &:hover
-    opacity: 1
-
-.nav-icon
-  @extend $nav-link
-  font-family: font-icon
-  text-align: center
-  font-size: font-size
-  width: font-size
-  height: font-size
-  padding: 20px 15px
-  position: relative
-  cursor: pointer
-
-.main-nav-link
-  @extend $nav-link
-  font-weight: 300
-  letter-spacing: 1px
-  @media mq-mobile
-    display: none
-
-#main-nav-toggle
-  display: none
-  &:before
-    content: "\f0c9"
-  @media mq-mobile
-    display: block
-
-#sub-nav
-  float: right
-  margin-right: -15px
-
-#nav-rss-link
-  &:before
-    content: "\f09e"
-
-#nav-search-btn
-  &:before
-    content: "\f002"
-
-#search-form-wrap
-  position: absolute
-  top: 15px
-  width: 150px
-  height: 30px
-  right: -150px
-  opacity: 0
-  transition: 0.2s ease-out
-  &.on
-    opacity: 1
-    right: 0
-  @media mq-mobile
-    width: 100%
-    right: -100%
-
-.search-form
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  background: #fff
-  padding: 5px 15px
-  border-radius: 15px
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
-
-.search-form-input
-  border: none
-  background: none
-  color: color-default
-  width: 100%
-  font: 13px font-sans
-  outline: none
-  &::-webkit-search-results-decoration
-  &::-webkit-search-cancel-button
-    -webkit-appearance: none
-
-.search-form-submit
-  position: absolute
-  top: 50%
-  right: 10px
-  margin-top: -7px
-  font: 13px font-icon
-  border: none
-  background: none
-  color: #bbb
-  cursor: pointer
-  &:hover, &:focus
-    color: #777
+body
+  & > header
+    background #333
+    h1
+      display inline-block
+      margin 0
+    h2
+      margin .2em 0 0
+      font-size 1em
+      color #aaa
+      font-weight normal
+  & > nav
+    position relative
+    background-color #ccc
+    background url('/images/noise.png?1425807048'),-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(50%, #cccccc), color-stop(100%, #b0b0b0))
+    background url('/images/noise.png?1425807048'),-webkit-linear-gradient(#e0e0e0,#cccccc,#b0b0b0)
+    background url('/images/noise.png?1425807048'),-moz-linear-gradient(#e0e0e0,#cccccc,#b0b0b0)
+    background url('/images/noise.png?1425807048'),-o-linear-gradient(#e0e0e0,#cccccc,#b0b0b0)
+    background url('/images/noise.png?1425807048'),linear-gradient(#e0e0e0,#cccccc,#b0b0b0)
+    border-top 1px solid #f2f2f2
+    border-bottom 1px solid #8c8c8c
+    padding-top .35em
+    padding-bottom .35em
+    form
+      -webkit-background-clip padding
+      -moz-background-clip padding
+      background-clip padding-box
+      margin 0
+      padding 0
+      .search
+        padding .3em .5em 0
+        font-size .85em
+        font-family "PT Sans","Helvetica Neue",Arial,sans-serif
+        line-height 1.1em
+        width 95%
+        -webkit-border-radius 0.5em
+        -moz-border-radius 0.5em
+        -ms-border-radius 0.5em
+        -o-border-radius 0.5em
+        border-radius 0.5em
+        -webkit-background-clip padding
+        -moz-background-clip padding
+        background-clip padding-box
+        -webkit-box-shadow #d1d1d1 0 1px
+        -moz-box-shadow #d1d1d1 0 1px
+        box-shadow #d1d1d1 0 1px
+        background-color #f2f2f2
+        border 1px solid #b3b3b3
+        color #888
+        &:focus
+          color #444
+          border-color #80b1df
+          -webkit-box-shadow #80b1df 0 0 4px,#80b1df 0 0 3px inset
+          -moz-box-shadow #80b1df 0 0 4px,#80b1df 0 0 3px inset
+          box-shadow #80b1df 0 0 4px,#80b1df 0 0 3px inset
+          background-color #fff
+          outline none
+    fieldset[role=search]
+      float right
+      width 48%
+    fieldset
+      &.mobile-nav
+        float left
+        width 48%
+        select
+          width 100%
+          font-size .92em
+          border 1px solid #888
+    ul
+      display none
+body>header h1 a,body>header h1 a:visited,body>header h1 a:hover
+  color #f2f2f2
+  text-decoration none
+@media only screen and (min-width: 550px)
+  body
+    & > nav
+      font-size .9em
+      ul
+        margin 0
+        padding 0
+        border 0
+        overflow hidden
+        *zoom 1
+        float left
+        display block
+        padding-top .15em
+        li
+          list-style-image none
+          list-style-type none
+          margin-left 0
+          white-space nowrap
+          display inline
+          float left
+          padding-left 0
+          padding-right 0
+          margin 0
+          &:last-child
+            padding-right 0
+          &.last
+            padding-right 0
+        &.subscription
+          margin-left .8em
+          float right
+          li
+            &:last-child
+              a
+                padding-right 0
+      a
+        color #6b6b6b
+        font-family "PT Sans","Helvetica Neue",Arial,sans-serif
+        text-shadow #ebebeb 0 1px
+        float left
+        text-decoration none
+        font-size 1.1em
+        padding .1em 0
+        line-height 1.5em
+        &:visited
+          color #6b6b6b
+        &:hover
+          color #101010
+      li
+        & + li
+          border-left 1px solid #b0b0b0
+          margin-left .8em
+          a
+            padding-left .8em
+            border-left 1px solid #dedede
+      form
+        float right
+        text-align left
+        padding-left .8em
+        width 175px
+        .search
+          width 93%
+          font-size .95em
+          line-height 1.2em
+      ul[data-subscription$=email]
+        & + form
+          width 97px
+          .search
+            width 91%
+      fieldset
+        &.mobile-nav
+          display none
+      fieldset[role=search]
+        width 99%
+  body>nav ul li:first-child,body>nav ul li.first
+    padding-left 0
+@media only screen and (min-width: 992px)
+  body
+    & > nav
+      form
+        width 215px
+      ul[data-subscription$=email]
+        & + form
+          width 147px
+.no-placeholder
+  body
+    & > nav
+      .search
+        background #f2f2f2 url('/images/search.png?1425807049') 0.3em 0.25em no-repeat
+        text-indent 1.3em

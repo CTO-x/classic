@@ -1,357 +1,342 @@
-.article
-  margin: block-margin 0
-
-.article-inner
-  @extend $block
-  overflow: hidden
-
-.article-meta
-  clearfix()
-
-.article-date
-  @extend $block-caption
-  float: left
-
-.article-category
-  float: left
-  line-height: 1em
-  color: #ccc
-  text-shadow: 0 1px #fff
-  margin-left: 8px
+h1,h2,h3,h4,h5,h6
+  text-rendering optimizelegibility
+  margin-bottom 1em
+  font-weight bold
+h2,section h1
+  font-size 1.5em
+h3,section h2,section section h1
+  font-size 1.3em
+h4,section h3,section section h2,section section section h1
+  font-size 1em
+h5,section h4,section section h3
+  font-size .9em
+h6,section h5,section section h4,section section section h3
+  font-size .8em
+p,article blockquote,ul,ol
+  margin-bottom 1.5em
+ul
+  list-style-type disc
+  ul
+    list-style-type circle
+    margin-bottom 0px
+    ul
+      list-style-type square
+      margin-bottom 0px
+ol
+  list-style-type decimal
+  ol
+    list-style-type lower-alpha
+    margin-bottom 0px
+    ol
+      list-style-type lower-roman
+      margin-bottom 0px
+ul,ul ul,ul ol,ol,ol ul,ol ol
+  margin-left 1.3em
+ul ul,ul ol,ol ul,ol ol
+  margin-bottom 0em
+strong
+  font-weight bold
+em
+  font-style italic
+sup,sub
+  font-size 0.75em
+  position relative
+  display inline-block
+  padding 0 .2em
+  line-height .8em
+sup
+  top -.5em
+sub
+  bottom -.5em
+a[rev='footnote']
+  font-size .75em
+  padding 0 .3em
+  line-height 1
+q
+  font-style italic
   &:before
-    content: "\2022"
-
-.article-category-link
-  @extend $block-caption
-  margin: 0 12px 1em
-
-.article-header
-  padding: article-padding article-padding 0
-
-.article-title
-  text-decoration: none
-  font-size: 2em
-  font-weight: bold
-  color: color-default
-  line-height: line-height-title
-  transition: color 0.2s
-  a&:hover
-    color: color-link
-
-.article-entry
-  @extend $base-style
-  clearfix()
-  color: color-default
-  padding: 0 article-padding
-  p, table
-    line-height: line-height
-    margin: line-height 0
-  h1, h2, h3, h4, h5, h6
-    font-weight: bold
-  h1, h2, h3, h4, h5, h6
-    line-height: line-height-title
-    margin: line-height-title 0
-  a
-    color: color-link
-    text-decoration: none
-    &:hover
-      text-decoration: underline
-  ul, ol, dl
-    margin-top: line-height
-    margin-bottom: line-height
-  img, video
-    max-width: 100%
-    height: auto
-    display: block
-    margin: auto
-  iframe
-    border: none
-  table
-    width: 100%
-    border-collapse: collapse
-    border-spacing: 0
-  th
-    font-weight: bold
-    border-bottom: 3px solid color-border
-    padding-bottom: 0.5em
-  td
-    border-bottom: 1px solid color-border
-    padding: 10px 0
+    content "\201C"
+  &:after
+    content "\201D"
+em,dfn
+  font-style italic
+strong,dfn
+  font-weight bold
+del,s
+  text-decoration line-through
+abbr,acronym
+  border-bottom 1px dotted
+  cursor help
+hr
+  margin-bottom 0.2em
+small
+  font-size .8em
+big
+  font-size 1.2em
+article
   blockquote
-    font-family: font-serif
-    font-size: 1.4em
-    margin: line-height 20px
-    text-align: center
+    font-style italic
+    position relative
+    font-size 1.2em
+    line-height 1.5em
+    padding-left 1em
+    border-left 4px solid rgba(170,170,170,0.5)
+    cite
+      font-style italic
+      a
+        color #aaa !important
+        word-wrap break-word
+      &:before
+        content '\2014'
+        padding-right .3em
+        padding-left .3em
+        color #aaa
+@media only screen and (min-width: 992px)
+  article
+    blockquote
+      padding-left 1.5em
+      border-left-width 4px
+
+
+.pullquote-right:before,.pullquote-left:before
+  padding 0
+  border none
+  content attr(data-pullquote)
+  float right
+  width 45%
+  margin .5em 0 1em 1.5em
+  position relative
+  top 7px
+  font-size 1.4em
+  line-height 1.45em
+.pullquote-left
+  &:before
+    float left
+    margin .5em 1.5em 1em 0
+.force-wrap,article a,aside.sidebar a
+  white-space -moz-pre-wrap
+  white-space -pre-wrap
+  white-space -o-pre-wrap
+  white-space pre-wrap
+  word-wrap break-word
+.group,body>header,body>nav,body>footer,body #content>article,body #content>div>article,body #content>div>section,body div.pagination,aside.sidebar,#main,#content,.sidebar
+  *zoom 1
+.group:after,body>header:after,body>nav:after,body>footer:after,body #content>article:after,body #content>div>section:after,body div.pagination:after,#main:after,#content:after,.sidebar:after
+  content ""
+  display table
+  clear both
+body
+  -webkit-text-size-adjust none
+  max-width 1200px
+  position relative
+  margin 0 auto
+body>header,body>nav,body>footer,body #content>article,body #content>div>article,body #content>div>section
+  padding-left 18px
+  padding-right 18px
+@media only screen and (min-width: 480px)
+  body>header,body>nav,body>footer,body #content>article,body #content>div>article,body #content>div>section
+    padding-left 25px
+    padding-right 25px
+@media only screen and (min-width: 768px)
+  body>header,body>nav,body>footer,body #content>article,body #content>div>article,body #content>div>section
+    padding-left 35px
+    padding-right 35px
+@media only screen and (min-width: 992px)
+  body>header,body>nav,body>footer,body #content>article,body #content>div>article,body #content>div>section
+    padding-left 55px
+    padding-right 55px
+body
+  div
+    &.pagination
+      margin-left 18px
+      margin-right 18px
+@media only screen and (min-width: 480px)
+  body
+    div
+      &.pagination
+        margin-left 25px
+        margin-right 25px
+@media only screen and (min-width: 768px)
+  body
+    div
+      &.pagination
+        margin-left 35px
+        margin-right 35px
+@media only screen and (min-width: 992px)
+  body
+    div
+      &.pagination
+        margin-left 55px
+        margin-right 55px
+
+#content
+  overflow hidden
+#content>div,#content>article
+  width 100%
+
+
+article
+  padding-top 1em
+  header
+    position relative
+    padding-top 2em
+    padding-bottom 1em
+    margin-bottom 1em
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x
+    h1
+      margin 0
+      a
+        text-decoration none
+    p
+      font-size .9em
+      color #aaa
+      margin 0
+      &.meta
+        text-transform uppercase
+        position absolute
+        top 0
+/*article header h1 a:hover{text-decoration:underline}*/
+
+@media only screen and (min-width: 768px)
+  article
+    header
+      margin-bottom 1.5em
+      padding-bottom 1em
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x
+
+article
+  h2
+    padding-top 0.8em
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x
+  .feature
+    padding-top .5em
+    margin-bottom 1em
+    padding-bottom 1em
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x
+    font-size 2.0em
+    font-style italic
+    line-height 1.3em
+  video
+    display block
+    width 100%
+  .flash-video
+    & > div
+      position relative
+      display block
+      padding-bottom 56.25%
+      padding-top 1px
+      height 0
+      overflow hidden
+  & > footer
+    padding-bottom 2.5em
+    margin-top 2em
+    p
+      &.meta
+        margin-bottom .8em
+        font-size .85em
+        clear both
+        overflow hidden
+.entry-content article h2:first-child,article header+h2
+  padding-top 0
+article h2:first-child,article header+h2
+  background none
+article img,article video,article .flash-video
+  -webkit-border-radius 0.3em
+  -moz-border-radius 0.3em
+  -ms-border-radius 0.3em
+  -o-border-radius 0.3em
+  border-radius 0.3em
+  -webkit-box-shadow rgba(0,0,0,0.15) 0 1px 4px
+  -moz-box-shadow rgba(0,0,0,0.15) 0 1px 4px
+  box-shadow rgba(0,0,0,0.15) 0 1px 4px
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+  border #fff 0.5em solid
+article video,article .flash-video
+  margin 0 auto 1.5em
+article .flash-video>div iframe,article .flash-video>div object,article .flash-video>div embed
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+.blog-index
+  article
+    & + article
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x
+#content
+  .blog-index
+    padding-top 0
+    padding-bottom 0
+    article
+      padding-top 2em
+      header
+        background none
+        padding-bottom 0
+      h1
+        font-size 2.2em
+        a
+          color inherit
+          &:hover
+            color #0181eb
+    a[rel=full-article]
+      background #ebebeb
+      display inline-block
+      padding .4em .8em
+      margin-right .5em
+      text-decoration none
+      color #666
+      -webkit-transition background-color 0.5s
+      -moz-transition background-color 0.5s
+      -o-transition background-color 0.5s
+      transition background-color 0.5s
+    a[rel=full-article]:hover
+      background #0181eb
+      text-shadow none
+      color #f8f8f8
     footer
-      font-size: font-size
-      margin: line-height 0
-      font-family: font-sans
-      cite
-        &:before
-          content: "—"
-          padding: 0 0.5em
-  .pullquote
-    text-align: left
-    width: 45%
-    margin: 0
-    &.left
-      margin-left: 0.5em
-      margin-right: 1em
-    &.right
-      margin-right: 0.5em
-      margin-left: 1em
-  .caption
-    color: color-grey
-    display: block
-    font-size: 0.9em
-    margin-top: 0.5em
-    position: relative
-    text-align: center
-  // http://webdesignerwall.com/tutorials/css-elastic-videos
-  .video-container
-    position: relative
-    padding-top: (9 / 16 * 100)% // 16:9 ratio
-    height: 0
-    overflow: hidden
-    iframe, object, embed
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
-      margin-top: 0
-
-.article-more-link a
-  display: inline-block
-  line-height: 1em
-  padding: 6px 15px
-  border-radius: 15px
-  background: color-background
-  color: color-grey
-  text-shadow: 0 1px #fff
-  text-decoration: none
-  &:hover
-    background: color-link
-    color: #fff
-    text-decoration: none
-    text-shadow: 0 1px darken(color-link, 20%)
-
-.article-footer
-  clearfix()
-  font-size: 0.85em
-  line-height: line-height
-  border-top: 1px solid color-border
-  padding-top: line-height
-  margin: 0 article-padding article-padding
-  a
-    color: color-grey
-    text-decoration: none
-    &:hover
-      color: color-default
-
-.article-tag-list-item
-  float: left
-  margin-right: 10px
-
-.article-tag-list-link
-  &:before
-    content: "#"
-
-.article-comment-link
-  float: right
-  &:before
-    content: "\f075"
-    font-family: font-icon
-    padding-right: 8px
-
-.article-share-link
-  cursor: pointer
-  float: right
-  margin-left: 20px
-  &:before
-    content: "\f064"
-    font-family: font-icon
-    padding-right: 6px
-
-#article-nav
-  clearfix()
-  position: relative
-  @media mq-normal
-    margin: block-margin 0
-    &:before
-      absolute-center(8px)
-      content: ""
-      border-radius: 50%
-      background: color-border
-      box-shadow: 0 1px 2px #fff
-
-.article-nav-link-wrap
-  text-decoration: none
-  text-shadow: 0 1px #fff
-  color: color-grey
-  box-sizing: border-box
-  margin-top: block-margin
-  text-align: center
-  display: block
-  &:hover
-    color: color-default
-  @media mq-normal
-    width: 50%
-    margin-top: 0
-
-#article-nav-newer
-  @media mq-normal
-    float: left
-    text-align: right
-    padding-right: 20px
-
-#article-nav-older
-  @media mq-normal
-    float: right
-    text-align: left
-    padding-left: 20px
-
-.article-nav-caption
-  text-transform: uppercase
-  letter-spacing: 2px
-  color: color-border
-  line-height: 1em
-  font-weight: bold
-  #article-nav-newer &
-    margin-right: -2px
-
-.article-nav-title
-  font-size: 0.85em
-  line-height: line-height
-  margin-top: 0.5em
-
-.article-share-box
-  position: absolute
-  display: none
-  background: #fff
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2)
-  border-radius: 3px
-  margin-left: -145px
-  overflow: hidden
-  z-index: 1
-  &.on
-    display: block
-
-.article-share-input
-  width: 100%
-  background: none
-  box-sizing: border-box
-  font: 14px font-sans
-  padding: 0 15px
-  color: color-default
-  outline: none
-  border: 1px solid color-border
-  border-radius: 3px 3px 0 0
-  height: 36px
-  line-height: 36px
-
-.article-share-links
-  clearfix()
-  background: color-background
-
-$article-share-link
-  width: 50px
-  height: 36px
-  display: block
-  float: left
-  position: relative
-  color: #999
-  text-shadow: 0 1px #fff
-  &:before
-    font-size: 20px
-    font-family: font-icon
-    absolute-center(@font-size)
-    text-align: center
-  &:hover
-    color: #fff
-
-.article-share-twitter
-  @extend $article-share-link
-  &:before
-    content: "\f099"
-  &:hover
-    background: color-twitter
-    text-shadow: 0 1px darken(color-twitter, 20%)
-
-.article-share-facebook
-  @extend $article-share-link
-  &:before
-    content: "\f09a"
-  &:hover
-    background: color-facebook
-    text-shadow: 0 1px darken(color-facebook, 20%)
-
-.article-share-pinterest
-  @extend $article-share-link
-  &:before
-    content: "\f0d2"
-  &:hover
-    background: color-pinterest
-    text-shadow: 0 1px darken(color-pinterest, 20%)
-
-.article-share-google
-  @extend $article-share-link
-  &:before
-    content: "\f0d5"
-  &:hover
-    background: color-google
-    text-shadow: 0 1px darken(color-google, 20%)
-
-.article-gallery
-  background: #000
-  position: relative
-
-.article-gallery-photos
-  position: relative
-  overflow: hidden
-
-.article-gallery-img
-  display: none
-  max-width: 100%
-  &:first-child
-    display: block
-  &.loaded
-    position: absolute
-    display: block
-  img
-    display: block
-    max-width: 100%
-    margin: 0 auto
-/*
-$article-gallery-ctrl
-  position: absolute
-  top: 0
-  height: 100%
-  width: 60px
-  color: #fff
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3)
-  opacity: 0.3
-  transition: opacity 0.2s
-  cursor: pointer
-  &:hover
-    opacity: 0.8
-  &:before
-    font-size: 30px
-    font-family: font-icon
-    position: absolute
-    top: 50%
-    margin-top: @font-size * -0.5
-
-.article-gallery-prev
-  @extend $article-gallery-ctrl
-  left: 0
-  &:before
-    content: "\f053"
-    left: 15px
-
-.article-gallery-next
-  @extend $article-gallery-ctrl
-  right: 0
-  &:before
-    content: "\f054"
-    right: 15px*/
+      margin-top 1em
+  div
+    &.pagination
+      text-align center
+      font-size .95em
+      position relative
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x
+      padding-top 1.5em
+      padding-bottom 1.5em
+      a
+        text-decoration none
+        color #aaa
+        &.prev
+          position absolute
+          left 0
+        &.next
+          position absolute
+          right 0
+        &:hover
+          color #0181eb
+.separator,article>footer .byline+time:before,article>footer time+time:before,article>footer .comments:before,article>footer .byline ~ .categories:before
+  content "\2022 "
+  padding 0 .4em 0 .2em
+  display inline-block
+#content div.pagination a[href*=archive]:before,#content div.pagination a[href*=archive]:after
+  content '\2014'
+  padding 0 .3em
+p
+  &.meta
+    & + .sharing
+      padding-top 1em
+      padding-left 0
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x
+#fb-root
+  display none
+#archive #content>div,#archive #content>div>article
+  padding-top 0
+#content
+  & > .category
+    article
+      margin-left 0
+      padding-left 6.8em
+    .year
+      display inline

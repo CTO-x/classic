@@ -4,8 +4,6 @@
     padding 1em 0 1em
     position relative
     background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x
-    padding-left 4.5em
-    padding-bottom .7em
     &:last-child
       background none
     footer
@@ -24,23 +22,11 @@
         color #0181eb
   h2
     display none
-    margin-bottom .3em
-    font-weight normal
-    display inline-block
-    position relative
-    top -1px
-    float left
-    &:first-child
-      padding-top .75em
   .entry-content
     display none
   time
     font-size .9em
     line-height 1.2em
-    position absolute
-    text-align right
-    left 0em
-    top 1.8em
     .month
       text-transform uppercase
   p
@@ -48,10 +34,6 @@
   a
     &:hover
       color #0181eb
-    &.category
-      line-height 1.1em
-  .year
-    display none
 /*#blog-archives h1 a:hover{text-decoration:underline}*/
 #blog-archives a.category,#blog-archives time
   color #aaa
@@ -61,11 +43,28 @@
   color inherit
 #blog-archives a:hover,#blog-archives .entry-content a:hover
   color #0181eb
-@media
-  only
-    screen
-      and
-        (min-width
-          &:
-            550px)
-              #blog-archives article{margin-left 5em
+@media only screen and (min-width: 550px)
+  #blog-archives
+    article
+      margin-left 5em
+      padding-left 4.5em
+      padding-bottom .7em
+    h2
+      margin-bottom .3em
+      font-weight normal
+      display inline-block
+      position relative
+      top -1px
+      float left
+      &:first-child
+        padding-top .75em
+    time
+      position absolute
+      text-align right
+      left 0em
+      top 1.8em
+    .year
+      display none
+    a
+      &.category
+        line-height 1.1em
