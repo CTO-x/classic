@@ -128,11 +128,13 @@ function highlight(argument) {
   // 代码添加复制功能
   var codes = $('figure'),
     client = new ZeroClipboard(),
-    html = '<div class="widget-codetool" style="display:none;"><button class="copyCode btn btn-xs" data-clipboard-text="" title="">复制</button></div>';
+    html = '<div class="widget-codetool" style="display:none;"><button class="copyCode btn btn-xs" data-clipboard-text="" title="">复制</button></div>',
+    tipHtml = '<div class="tooltip fade top in" role="tooltip"><div class="tooltip-inner">已复制</div></div>';
 
   codes.each(function(index, el) {
-    $(this).append(html);
-    $(this).find('.copyCode').attr('data-clipboard-text', $(this).attr('data-source-code'));
+    var t = $(html);
+    t.find('.copyCode').attr('data-clipboard-text', $(this).attr('data-source-code'));
+    $(this).append(t);
     $(this).removeAttr('data-source-code');
   })
 
@@ -140,6 +142,7 @@ function highlight(argument) {
     $(this).find('.widget-codetool').show();
     client.clip($(this).find('.copyCode'));
   })
+  
 
   codes.mouseleave(function(e) {
     $(this).find('.widget-codetool').hide();
@@ -150,9 +153,14 @@ function highlight(argument) {
     // `this` === `client`
     // `event.target` === the element that was clicked
     // event.target.style.display = "none";
+    $('body').append(tipHtml);
     
+    setTimeout(function(){
+      $('.tooltip').slideUp(function() {
+        $(this).remove();
+      })
+    }, 1000);
 
-    // client.destroy();
   });
 }
 
