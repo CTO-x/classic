@@ -134,19 +134,42 @@ function highlight(argument) {
   codes.each(function(index, el) {
     var t = $(html);
     t.find('.copyCode').attr('data-clipboard-text', $(this).attr('data-source-code'));
-    $(this).append(t);
+    $(this).before(t);
     $(this).removeAttr('data-source-code');
+    $(this).attr('data-id', index);
   })
 
   codes.mouseenter(function(e) {
-    $(this).find('.widget-codetool').show();
-    client.clip($(this).find('.copyCode'));
+    clearTimeout(window['copyTimer'+$(this).attr('data-id')]);
+    // $(this).find('.widget-codetool').show();
+
+    $(this).prev().fadeIn();
+    // client.clip($(this).find('.copyCode'));
+    client.clip($(this).prev().find('.copyCode'));
+  })
+  $('.widget-codetool').mouseenter(function(e) {
+    clearTimeout(window['copyTimer'+$(this).next().attr('data-id')]);
+  })
+  
+  
+  $('.widget-codetool').mouseleave(function(e) {
+    var that = this;
+    window['copyTimer'+$(this).next().attr('data-id')] = setTimeout(function(){
+      $(that).fadeOut(function() {
+        client.unclip();
+      })
+    }, 1800);
   })
   
 
   codes.mouseleave(function(e) {
-    $(this).find('.widget-codetool').hide();
-    client.unclip();
+    // $(this).find('.widget-codetool').hide();
+    var that = this;
+    window['copyTimer'+$(this).attr('data-id')] = setTimeout(function(){
+      $(that).prev().fadeOut(function() {
+        client.unclip();
+      })
+    }, 1800);
   })
 
   client.on("aftercopy", function(event) {
@@ -156,10 +179,10 @@ function highlight(argument) {
     $('body').append(tipHtml);
     
     setTimeout(function(){
-      $('.tooltip').slideUp(function() {
+      $('.tooltip').fadeOut(function() {
         $(this).remove();
       })
-    }, 1000);
+    }, 700);
 
   });
 }
