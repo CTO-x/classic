@@ -137,7 +137,7 @@ function highlight(argument) {
     $(this).before(t);
     $(this).removeAttr('data-source-code');
     $(this).attr('data-id', index);
-  })
+  });
 
   codes.mouseenter(function(e) {
     clearTimeout(window['copyTimer'+$(this).attr('data-id')]);
@@ -146,31 +146,32 @@ function highlight(argument) {
     $(this).prev().fadeIn();
     // client.clip($(this).find('.copyCode'));
     client.clip($(this).prev().find('.copyCode'));
-  })
+  });
+  $('.widget-codetool').mousedown(function(e) {
+    client.clip($(this).find('.copyCode'));
+  });
   $('.widget-codetool').mouseenter(function(e) {
     clearTimeout(window['copyTimer'+$(this).next().attr('data-id')]);
-  })
+  });
   
   
   $('.widget-codetool').mouseleave(function(e) {
     var that = this;
     window['copyTimer'+$(this).next().attr('data-id')] = setTimeout(function(){
       $(that).fadeOut(function() {
-        client.unclip();
-      })
+        client.unclip($(that).find('.copyCode'));
+      });
     }, 1800);
-  })
+  });
   
 
   codes.mouseleave(function(e) {
     // $(this).find('.widget-codetool').hide();
     var that = this;
     window['copyTimer'+$(this).attr('data-id')] = setTimeout(function(){
-      $(that).prev().fadeOut(function() {
-        client.unclip();
-      })
+      $(that).prev().fadeOut();
     }, 1800);
-  })
+  });
 
   client.on("aftercopy", function(event) {
     // `this` === `client`
@@ -183,8 +184,35 @@ function highlight(argument) {
         $(this).remove();
       })
     }, 700);
+    
+    client.on("error", function(e) {
+        console.log(e.name + ': ' + e.messsage)
+    });
 
   });
+}
+
+function fancybox() {
+  // Caption
+  $('.entry-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+
+      var alt = this.alt;
+
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+
+  if ($.fancybox){
+    $('.fancybox').fancybox();
+  }
 }
 
 $('document').ready(function() {
@@ -195,6 +223,7 @@ $('document').ready(function() {
   getNav();
   addSidebarToggler();
   highlight();
+  fancybox();
 });
 
 // iOS scaling bug fix
