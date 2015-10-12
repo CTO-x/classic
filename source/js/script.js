@@ -194,7 +194,7 @@ function highlight(argument) {
 
 function fancybox() {
   // Caption
-  $('.entry-content').each(function(i){
+  $('article').each(function(i){
     $(this).find('img').each(function(){
       if ($(this).parent().hasClass('fancybox')) return;
 
