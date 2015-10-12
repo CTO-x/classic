@@ -1,7 +1,7 @@
 .entry-content pre,
 .entry-content .highlight {
   background: #2d2d2d;
-  margin: 0 -20px;
+  margin: 0 -20px 1em;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
