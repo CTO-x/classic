@@ -4,13 +4,13 @@
 .widget-codetool 
   opacity .99
   float right
-  margin -27px -15px 0 0
+  margin -28px -15px 0 0
 @media only screen and (max-width: 992px)
   .widget-codetool
     margin-top -25px
 @media only screen and (min-width: 992px)
   .widget-codetool
-    margin-top -27px
+    margin-top -28px
 .widget-codetool 
   button 
     color #fff
@@ -53,17 +53,18 @@ button
   font inherit
   margin 0
 .tooltip 
-  position fixed
-  margin -18px 0 0 -38px
-  top 50%
-  left 50%
+  position absolute
+  // margin -18px 0 0 -38px
+  // top 50%
+  // left 50%
   z-index 1070
-  display block
+  display none
   visibility visible
   font-size 12px
   line-height 1.4
   border-radius 25px
-  box-shadow 0 0 30px #cacaca
+  box-shadow 0 10px 30px #cacaca
+  border-bottom none
   opacity 0.3
   filter unquote('alpha(opacity=30)')
   &.top 
@@ -86,3 +87,4 @@ button
   text-decoration none
   background none
   border-radius 3px
+  border none

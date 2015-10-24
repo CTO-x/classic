@@ -19,11 +19,15 @@
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="author" content="<%= config.author %>">
-  <meta name="description" content="<%- truncate(strip_html(trim((page && (page.description || page.content)) || config.description || '')), {length: 200}) %>">
   <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
+  <meta name="description" content="<%- truncate(strip_html(trim((page && (page.description || page.content)) || config.description || '')), {length: 200}) %>">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <%- css(config.root + 'css/style') %>
+  
+  <link rel="dns-prefetch" href="//cdn.bootcss.com">
 
   <link rel="canonical" href="<%= page.permalink || config.url %>">
   <% if (theme.rss){ %>
@@ -36,5 +40,4 @@
   <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
   <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">-->
   <!--<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">-->
-  <%- css('css/style') %>
 </head>

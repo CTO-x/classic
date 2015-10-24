@@ -124,7 +124,7 @@ function renderDeliciousLinks(items) {
   $('#delicious').html(output);
 }
 
-function highlight(argument) {
+function highlight() {
   // 代码添加复制功能
   var codes = $('figure'),
     client = new ZeroClipboard(),
@@ -178,15 +178,21 @@ function highlight(argument) {
     // `event.target` === the element that was clicked
     // event.target.style.display = "none";
     $('body').append(tipHtml);
+    var t = $(event.target).parent().next();
+    $('.tooltip').css({
+      top: t.offset().top + 'px',
+      left: (t.offset().left - $('body').offset().left + (t.width() / 2) - 18) + 'px'
+    });
     
+    $('.tooltip').slideDown();
     setTimeout(function(){
-      $('.tooltip').fadeOut(function() {
+      $('.tooltip').slideUp(function() {
         $(this).remove();
-      })
-    }, 700);
+      });
+    }, 900);
     
     client.on("error", function(e) {
-        console.log(e.name + ': ' + e.messsage)
+        console.log(e.name + ': ' + e.messsage);
     });
 
   });
@@ -200,7 +206,7 @@ function fancybox() {
 
       var alt = this.alt;
 
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      // if (alt) $(this).after('<span class="caption">' + alt + '</span>');
 
       $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
     });
