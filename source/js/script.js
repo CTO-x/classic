@@ -124,6 +124,20 @@ function renderDeliciousLinks(items) {
   $('#delicious').html(output);
 }
 
+function html_decode(str) 
+{ 
+    var s = ""; 
+    if (str.length == 0) return ""; 
+    s = str.replace(/&amp;/g, "&"); 
+    s = s.replace(/&lt;/g, "<"); 
+    s = s.replace(/&gt;/g, ">"); 
+    s = s.replace(/&nbsp;/g, " "); 
+    s = s.replace(/&#39;/g, "\'"); 
+    s = s.replace(/&quot;/g, "\""); 
+    s = s.replace(/<br\/>/g, "\n"); 
+    return s; 
+} 
+
 function highlight() {
   // 代码添加复制功能
   var codes = $('figure'),
@@ -133,7 +147,7 @@ function highlight() {
 
   codes.each(function(index, el) {
     var t = $(html);
-    t.find('.copyCode').attr('data-clipboard-text', $(this).attr('data-source-code'));
+    t.find('.copyCode').attr('data-clipboard-text', html_decode($(this).find('.code pre').html().replace(/<br>/g, '\n').replace(/<.+?>/g, '')));
     $(this).before(t);
     $(this).removeAttr('data-source-code');
     $(this).attr('data-id', index);
