@@ -1,5 +1,5 @@
 <%
-  var title = page.title;
+  var title = page.title, last, now = date(Date.now(), 'YYYY');
 
   if (is_archive()){
     title = __('archive_a');
@@ -22,9 +22,9 @@
   </header>
   <div id="blog-archives" class="category">
   <% page.posts.each(function(post, i){ %>
-  <% var year = post.date.year(); now = date(Date.now(), 'YYYY'); %>
-  <% if (year != now){ %>
-    <% var year = now-1; %>
+  <% var year = post.date.year(); %>
+  <% if (year != last && year != now){ %>
+    <% last = year; %>
     <h2><%= year %></h2>
   <% } %>
   <article>
