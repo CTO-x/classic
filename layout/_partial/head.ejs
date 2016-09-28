@@ -20,10 +20,13 @@
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="author" content="<%= config.author %>">
   <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
-  <meta name="description" content="<%- truncate(strip_html(trim((page && (page.description || page.content)) || config.description || '')), {length: 200}) %>">
+  <meta name="description" content="<%- truncate(strip_html(trim((page && (page.description || (page.content || '').replace(/<span class="line">\d+<\/span>/g, '').replace(/<br>/g, '\n').replace(/\n+/g, '\n'))) || config.description || '')), {length: 200}).replace(/"/g, '&#34;') %>">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta itemprop="image" content="//a.disquscdn.com/uploads/users/14817/5647/avatar92.jpg?1445168112" />
+  <meta itemprop="name" content="<% if (title){ %><%= title %> | <% } %><%= config.title %>" />
+  <meta itemprop="description" content="<%- truncate(strip_html(trim((page && (page.description || (page.content || '').replace(/<span class="line">\d+<\/span>/g, '').replace(/<br>/g, '\n').replace(/\n+/g, '\n'))) || config.description || '')), {length: 200}).replace(/"/g, '&#34;') %>" />
   
   <%- css(config.root + 'css/style') %>
   
