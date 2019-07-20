@@ -15,6 +15,9 @@
         <% if (config.disqus_shortname && page.comments != false ){ %>
            | <a href="<% if (index){ %><%- url_for(post.path) %><% } %>#disqus_thread" <% if (index){ %>data-disqus-identifier="<%- url_for(post.permalink) %>"<% } %>>Comments</a>
         <% } %>
+        <% if (theme.gitalk.enable && page.comments != false ){ %>
+           | <a href="<% if (index){ %><%- url_for(post.path) %><% } %>#gitalk-container" <% if (index){ %>data-disqus-identifier="<%- url_for(post.permalink) %>"<% } %>>Comments</a>
+        <% } %>
       </p>
     <% } %>
   </header>

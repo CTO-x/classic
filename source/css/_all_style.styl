@@ -239,6 +239,9 @@ body>header,body>nav,body>footer,body #content>article,body #content>div>article
   body>header,body>nav,body>footer,body #content>article,body #content>div>article,body #content>div>section
     padding-left 55px
     padding-right 55px
+@media only screen and (max-width: 320px)
+  body
+    min-width 320px
 body
   div
     &.pagination
@@ -725,6 +728,8 @@ article
   h2
     padding-top 0.8em
     background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x
+.entry-content
+  line-height 2em
 .entry-content article h2:first-child,article header+h2
   padding-top 0
 article h2:first-child,article header+h2
@@ -766,8 +771,9 @@ article
       height 0
       overflow hidden
   & > footer
-    padding-bottom 2.5em
+    padding .5rem 0 2.5em
     margin-top 2em
+    background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC") top left repeat-x
     p
       &.meta
         margin-bottom .8em

@@ -7,7 +7,7 @@
       <%- partial('_partial/post/date') %>
       <%- partial('_partial/post/category') %>
     </p>
-    <% if (page.sharing != false){ %>
+    <% if (page.sharing){ %>
       <%- partial('_partial/post/sharing') %>
     <% } %>
     <p class="meta">
@@ -24,6 +24,13 @@
   <section>
     <h1><%= __('comments') %></h1>
     <div id="disqus_thread" aria-live="polite"><%- partial('_partial/post/disqus_thread') %></div>
+  </section>
+<% } %>
+<% if (theme.gitalk.enable && page.comments == true){ %>
+  <section>
+    <h1><%= __('comments') %></h1>
+    <div id="gitalk-container"></div>
+    <%- partial('_partial/post/gitalk') %>
   </section>
 <% } %>
 </div>

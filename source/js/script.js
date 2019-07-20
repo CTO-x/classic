@@ -141,7 +141,7 @@ function html_decode(str)
 function highlight() {
   // 代码添加复制功能
   var codes = $('figure'),
-    client = new ZeroClipboard(),
+    // client = new ZeroClipboard(),
     html = '<div class="widget-codetool" style="display:none;"><button class="copyCode btn btn-xs" data-clipboard-text="" title="">复制</button></div>',
     tipHtml = '<div class="tooltip fade top in" role="tooltip"><div class="tooltip-inner">已复制</div></div>';
 
@@ -152,6 +152,31 @@ function highlight() {
     $(this).removeAttr('data-source-code');
     $(this).attr('data-id', index);
   });
+  
+  var clipboard = new Clipboard('.copyCode');
+
+  clipboard.on('success', function(e) {
+      $('body').append(tipHtml);
+      var t = $(event.target).parent().next();
+      $('.tooltip').css({
+        top: t.offset().top + 'px',
+        left: (t.offset().left - $('body').offset().left + (t.width() / 2) - 18) + 'px'
+      });
+    
+      $('.tooltip').slideDown();
+      setTimeout(function(){
+        $('.tooltip').slideUp(function() {
+          $(this).remove();
+        });
+      }, 900);
+  
+      e.clearSelection();
+  });
+  
+  clipboard.on('error', function(e) {
+      console.error('Action:', e.action);
+      console.error('Trigger:', e.trigger);
+  });
 
   codes.mouseenter(function(e) {
     clearTimeout(window['copyTimer'+$(this).attr('data-id')]);
@@ -159,10 +184,10 @@ function highlight() {
 
     $(this).prev().fadeIn();
     // client.clip($(this).find('.copyCode'));
-    client.clip($(this).prev().find('.copyCode'));
+    // client.clip($(this).prev().find('.copyCode'));
   });
   $('.widget-codetool').mousedown(function(e) {
-    client.clip($(this).find('.copyCode'));
+    // client.clip($(this).find('.copyCode'));
   });
   $('.widget-codetool').mouseenter(function(e) {
     clearTimeout(window['copyTimer'+$(this).next().attr('data-id')]);
@@ -173,7 +198,7 @@ function highlight() {
     var that = this;
     window['copyTimer'+$(this).next().attr('data-id')] = setTimeout(function(){
       $(that).fadeOut(function() {
-        client.unclip($(that).find('.copyCode'));
+        // client.unclip($(that).find('.copyCode'));
       });
     }, 1800);
   });
@@ -187,29 +212,29 @@ function highlight() {
     }, 1800);
   });
 
-  client.on("aftercopy", function(event) {
-    // `this` === `client`
-    // `event.target` === the element that was clicked
-    // event.target.style.display = "none";
-    $('body').append(tipHtml);
-    var t = $(event.target).parent().next();
-    $('.tooltip').css({
-      top: t.offset().top + 'px',
-      left: (t.offset().left - $('body').offset().left + (t.width() / 2) - 18) + 'px'
-    });
+  // client.on("aftercopy", function(event) {
+  //   // `this` === `client`
+  //   // `event.target` === the element that was clicked
+  //   // event.target.style.display = "none";
+  //   $('body').append(tipHtml);
+  //   var t = $(event.target).parent().next();
+  //   $('.tooltip').css({
+  //     top: t.offset().top + 'px',
+  //     left: (t.offset().left - $('body').offset().left + (t.width() / 2) - 18) + 'px'
+  //   });
     
-    $('.tooltip').slideDown();
-    setTimeout(function(){
-      $('.tooltip').slideUp(function() {
-        $(this).remove();
-      });
-    }, 900);
+  //   $('.tooltip').slideDown();
+  //   setTimeout(function(){
+  //     $('.tooltip').slideUp(function() {
+  //       $(this).remove();
+  //     });
+  //   }, 900);
     
-    client.on("error", function(e) {
-        console.log(e.name + ': ' + e.messsage);
-    });
+  //   client.on("error", function(e) {
+  //       console.log(e.name + ': ' + e.messsage);
+  //   });
 
-  });
+  // });
 }
 
 function fancybox() {
