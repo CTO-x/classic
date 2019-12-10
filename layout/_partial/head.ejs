@@ -27,6 +27,9 @@
   <meta itemprop="image" content="//a.disquscdn.com/uploads/users/14817/5647/avatar92.jpg?1445168112" />
   <meta itemprop="name" content="<% if (title){ %><%= title %> | <% } %><%= config.title %>" />
   <meta itemprop="description" content="<%- truncate(strip_html(trim((page && (page.description || (page.content || '').replace(/<span class="line">\d+<\/span>/g, '').replace(/<br>/g, '\n').replace(/\n+/g, '\n'))) || config.description || '')), {length: 200}).replace(/"/g, '&#34;') %>" />
+  <% if (is_post() && config.generator_amp){ %>
+    <link rel="amphtml" href="./amp/index.html">
+  <% } %>
   
   <%- css(config.root + 'css/style') %>
   
